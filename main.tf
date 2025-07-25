@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket         = "terra-bucket-osv1"
     key            = "terraform.tfstate"
-    region         = var.region
+    region         = "eu-central-1"
     encrypt        = true
     dynamodb_table = "DB-terra"
     
@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 module "my_ec2_module" {
-  source          = "./module"   # relative path to your module folder
+  source          = "./modules/ec2"   # relative path to your module folder
   instance_type   = var.instance_type
   key_name        = var.key_name
   instance_count  = var.instance_count
