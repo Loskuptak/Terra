@@ -12,12 +12,6 @@ variable "instance_type" {
    
  }
 
-variable "ami_id" {
-  description = "ID AMI pro vytvoření instance."
-  type        = string
-  default     = "ami-08a6efd148b1f7504"
-
-}
 
 variable "prefix" {
     description = "Prefix"
